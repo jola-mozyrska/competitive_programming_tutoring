@@ -10,12 +10,13 @@ int n, m;
 
 
 // depth first search
-void dfs(int wierzcholek) {
-    visited[wierzcholek] = true;
+void dfs(int node) {
+    visited[node] = true;
     // zrob aktualizacje, informacje, co chcesz zrobic z wierzcholkiem
-    for(int i = 0; i < graph[wierzcholek].size(); ++i) {
-        if(visited[i] == false) {
-            dfs(i);
+    for(int i = 0; i < graph[node].size(); ++i) {
+        int u = graph[node][i];
+        if(visited[u] == false) {
+            dfs(u);
         }
     }
 }
